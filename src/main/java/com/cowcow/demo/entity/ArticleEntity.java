@@ -1,27 +1,32 @@
 package com.cowcow.demo.entity;
 
+import java.sql.Clob;
+
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "word")
-public class WordEntity {
+@Table(name = "article")
+public class ArticleEntity {
 
-	//mysql自增
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long inr;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long inr ;
 	
 	@Column
 	private String filename;
-	@Column
-	private String text;
-	@Column
-	private Long count;
+	
+	@Lob 
+	@Basic(fetch = FetchType.LAZY) 
+	@Column(name=" content", columnDefinition="CLOB", nullable=true) 
+	private String content;
 
 	public Long getInr() {
 		return inr;
@@ -39,20 +44,13 @@ public class WordEntity {
 		this.filename = filename;
 	}
 
-	public String getText() {
-		return text;
+	public String getContent() {
+		return content;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
-	public Long getCount() {
-		return count;
-	}
-
-	public void setCount(Long count) {
-		this.count = count;
-	}
-
+	
 }

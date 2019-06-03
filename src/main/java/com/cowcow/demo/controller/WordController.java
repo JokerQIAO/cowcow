@@ -25,15 +25,9 @@ public class WordController {
 		
 		Map<String, Long> wordMap = WordUtil.splitWord();
 		
-		for (String key : wordMap.keySet()) {
-			//System.out.println(key + " : " + wordMap.get(key));
-			WordEntity wordEntity = new WordEntity();
-			wordEntity.setCount(wordMap.get(key));
-			wordEntity.setFilename("01史记.txt");
-			wordEntity.setText(key);
-			wordDao.save(wordEntity);
-		}
+		
 		
 		return "showword";
 	}
+	
 }
