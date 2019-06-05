@@ -6,10 +6,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.ResourceUtils;
+
 
 public class WordUtil {
 
@@ -139,6 +141,16 @@ public class WordUtil {
 			e.printStackTrace();
 		}
 		return allWord;
+	}
+	
+	public static List<String> getDataByPoint(String article){
+		
+		List<String> list = new ArrayList<>();
+		String [] sentences = article.replaceAll("\r\n", "").split("。");
+		for(String sentence : sentences){
+			list.add(sentence);
+		}
+		return list;
 	}
 	
 	public static String getSingleArticle(File file){

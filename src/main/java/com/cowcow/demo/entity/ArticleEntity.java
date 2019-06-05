@@ -1,7 +1,5 @@
 package com.cowcow.demo.entity;
 
-import java.sql.Clob;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
