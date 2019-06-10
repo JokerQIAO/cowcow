@@ -3,12 +3,8 @@ package com.cowcow.demo.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-
 import com.cowcow.demo.dao.ArticleDao;
 import com.cowcow.demo.dao.SentenceDao;
 import com.cowcow.demo.dao.WordDao;

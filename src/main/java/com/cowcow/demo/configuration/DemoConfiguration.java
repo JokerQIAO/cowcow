@@ -14,6 +14,7 @@ public class DemoConfiguration extends WebMvcConfigurationSupport {
 		// TODO Auto-generated method stub
 		//请求对应界面
 		//registry.addViewController("/showword").setViewName("/showword");
+		registry.addViewController("/index").setViewName("/index");
 		super.addViewControllers(registry);
 	}
 	
